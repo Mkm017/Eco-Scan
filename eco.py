@@ -19,6 +19,8 @@ DATA_DIR = 'Data'
 # This ensures the predictions are mapped to the correct labels.
 if os.path.exists(DATA_DIR):
     class_names = sorted(os.listdir(DATA_DIR))
+else:
+    class_names = ["Battery", "Biological", "Brown-glass", "Cardboard","Clothes", "Green-glass", "Metal", "Paper", "Plastic", "Shoes", "Trash", "White-glass"]
 
 st.set_page_config(
     page_title=ST_PAGE_TITLE,
@@ -366,4 +368,5 @@ st.markdown(
     "Eco-Scan ♻️"
     "</div>",
     unsafe_allow_html=True
+
 )
