@@ -8,7 +8,7 @@ import pandas as pd
 import numpy as np
 
 # --- Configuration ---
-API_URL = "http://127.0.0.1:8000/classify/"
+API_URL = "apiserver-uspe8zvunuipfwhbqs6gjv.streamlit.app/classify/"
 ST_PAGE_TITLE = "Eco-Scan: AI-Powered Garbage Sorter"
 ST_PAGE_ICON = "♻️"
 CLASSES_TO_DISPLAY = 5  # Number of top classes to show in the bar chart
@@ -370,3 +370,4 @@ st.markdown(
     unsafe_allow_html=True
 
 )
+
