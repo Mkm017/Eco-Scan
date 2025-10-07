@@ -13,14 +13,14 @@ ST_PAGE_TITLE = "Eco-Scan: AI-Powered Garbage Sorter"
 ST_PAGE_ICON = "♻️"
 CLASSES_TO_DISPLAY = 5  # Number of top classes to show in the bar chart
 
-DATA_DIR = 'Data'
+#DATA_DIR = 'Data'
 
 # Get the list of class names from the folder structure.
 # This ensures the predictions are mapped to the correct labels.
-if os.path.exists(DATA_DIR):
-    class_names = sorted(os.listdir(DATA_DIR))
-else:
-    class_names = ["Battery", "Biological", "Brown-glass", "Cardboard","Clothes", "Green-glass", "Metal", "Paper", "Plastic", "Shoes", "Trash", "White-glass"]
+#if os.path.exists(DATA_DIR):
+   # class_names = sorted(os.listdir(DATA_DIR))
+#else:
+class_names = ["Battery", "Biological", "Brown-glass", "Cardboard","Clothes", "Green-glass", "Metal", "Paper", "Plastic", "Shoes", "Trash", "White-glass"]
 
 st.set_page_config(
     page_title=ST_PAGE_TITLE,
@@ -145,7 +145,7 @@ if 'classification_history' not in st.session_state:
 st.markdown(f'<h1 class="main-header">{ST_PAGE_ICON} {ST_PAGE_TITLE}</h1>', unsafe_allow_html=True)
 
 # Animated introduction
-with st.expander("Welcome to Eco-Classify!", expanded=True):
+with st.expander("Welcome to Eco-Scan!", expanded=True):
     st.markdown("""
     **Upload a photo of a waste item**, and our AI will classify it for proper recycling!     
     """)
@@ -276,7 +276,7 @@ with col2:
 
 # --- Sidebar with Enhanced Features ---
 with st.sidebar:
-    st.markdown(f'<h2 style="color: #2E8B57;">{ST_PAGE_ICON} About Eco-Classify</h2>', unsafe_allow_html=True)
+    st.markdown(f'<h2 style="color: #2E8B57;">{ST_PAGE_ICON} About Eco-Scan</h2>', unsafe_allow_html=True)
     
     # Tutorial steps with expandable sections
     with st.expander("📋 How to Use", expanded=True):
@@ -334,7 +334,7 @@ with st.sidebar:
         - **Frontend**: Streamlit UI (this app)
         - **Backend**: FastAPI server with ML model
         
-        The model classifies waste into categories using computer vision.
+        The model classifies waste into categories.
         
         **Note**: Confidence scores are capped at 99.99% to reflect realistic model performance.
         """)
@@ -354,7 +354,7 @@ with st.sidebar:
     # Add feedback mechanism
     st.markdown("---")
     st.subheader("💬 Feedback")
-    feedback = st.text_area("How can we improve Eco-Classify?")
+    feedback = st.text_area("How can we improve Eco-Scan?")
     if st.button("Submit Feedback"):
         if feedback:
             st.success("Thank you for your feedback!")
